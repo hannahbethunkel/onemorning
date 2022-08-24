@@ -39,7 +39,21 @@
 <script src="Detector.js"></script>
 <script src="OBJMTLLoader.js"></script>
 
+<script>
 
+let src = 'bedroomnoise.MP3';
+let audio = new Audio(src);
+
+audio.addEventListener("canplaythrough", () => {
+   audio.play().catch(e => {
+      window.addEventListener('click', () => {
+        audio.loop = true;
+         audio.play()
+      }, { once: true })
+   })
+});
+
+</script>   
     <script>
 
 
